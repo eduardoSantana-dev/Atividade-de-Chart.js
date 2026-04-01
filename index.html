@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Chart.js</title>
+</head>
+<style>
+    
+</style>
+<body>
+    
+    <div style="display: flex; width: 100%; justify-content: space-around; height: 90vh; align-items: center;">
+        <div><canvas id="GraficoLinha" style="height: 300px;"></canvas></div>
+    <div><canvas id="GraficoBarra"style="height: 300px;"></canvas></div>
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('GraficoBarra');
+    
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura maxima',
+        data: [22,24, 27, 23, 20,18],
+        borderWidth: 1,
+        backgroundColor:'red',
+        borderColor:'red'
+        
+      },
+    {
+        label: 'Umidade Média',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 1,
+        backgroundColor:'blue',
+        borderColor:'blue'
+      }
+    ],
+    }
+  });
+  const ctx2 = document.getElementById('GraficoLinha');
+    
+  new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: ['12:00','13:00','14:00','15:00','16:00','17:00'],
+      datasets: [{
+        label: 'Temperatura maxima',
+        data: [30,29, 28, 25, 22,23],
+        borderWidth: 1,
+        backgroundColor:'red',
+        borderColor:'red'
+      },
+    {
+        label: 'Umidade Média',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 1,
+        backgroundColor:'blue',
+        borderColor:'blue'
+      }
+    ],
+    }
+  });
+
+</script>
+</html>
